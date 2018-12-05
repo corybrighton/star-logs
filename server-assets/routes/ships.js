@@ -13,9 +13,9 @@ router.get('/api/ships', (req, res, next) => {
 })
 
 //GET BY ID
-router.get('/api/ships/:id', (req, res, next)=>{
+router.get('/api/ships/:id', (req, res, next) => {
   Ships.findById(req.params.id)
-    .then(ship =>{
+    .then(ship => {
       res.status(200).send(ship)
     })
     .catch(err => {
@@ -37,9 +37,9 @@ router.post('/api/ships', (req, res, next) => {
 
 //EDIT
 router.put('/api/ships/:id', (req, res, next) => {
-  Ships.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  Ships.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then(ship => {
-      res.status(200).send({message: "Successfully Updated", ship})
+      res.status(200).send({ message: "Successfully Updated", ship })
     })
     .catch(err => {
       res.status(400).send(err)
@@ -47,9 +47,9 @@ router.put('/api/ships/:id', (req, res, next) => {
 })
 
 //DESTROY
-router.delete('/api/ships/:id', (req, res, next)=>{
+router.delete('/api/ships/:id', (req, res, next) => {
   Ships.findByIdAndRemove(req.params.id)
-    .then(data=>{
+    .then(data => {
       res.send("Successfully Deleted Ship")
     })
     .catch(err => {

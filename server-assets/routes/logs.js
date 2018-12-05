@@ -44,3 +44,5 @@ router.delete('/api/logs/:logId', (req, res) => {
       })
     })
 })
+
+module.exports = router
